@@ -33,7 +33,7 @@ export default class App extends React.Component {
     }
 
     return (
-      <SafeAreaView style={{ flex: 1, backgroundColor: "#000" }}>
+      <SafeAreaView style={{ flex: 1, backgroundColor: "#fff" }}>
         <RootStack />
       </SafeAreaView>
     );
