@@ -11,7 +11,7 @@ const RootStack = createBottomTabNavigator(
     Settings: SettingsScreen,
   },
   {
-    initialRouteName: "Camera",
+    initialRouteName: "Home",
     navigationOptions: {
       headerStyle: {
         backgroundColor: "#f4511e",
