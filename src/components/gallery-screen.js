@@ -2,7 +2,7 @@ import React from 'react';
 import { Image, StyleSheet, View, TouchableOpacity, Text, ScrollView } from 'react-native';
 import { FileSystem, FaceDetector, MediaLibrary, Permissions } from 'expo';
 import { MaterialIcons } from '@expo/vector-icons';
-import Photo from './Photo';
+import Photo from './photo';
 
 const PHOTOS_DIR = FileSystem.documentDirectory + 'photos';
 

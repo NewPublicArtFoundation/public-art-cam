@@ -9,6 +9,8 @@
     "expo": "29.0.0-rc.2",
     "react": "16.3.1",
     "react-native": "expo/react-native#sdk-29",
-    "react-native-is-iphonex": "^1.0.1"
+    "react-native-is-iphonex": "^1.0.1",
+    "react-navigation": "^2.13.0",
+    "whatwg-fetch": "^2.0.4"
   }
 }
