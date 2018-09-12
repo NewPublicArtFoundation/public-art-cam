@@ -1,6 +1,6 @@
 import React from "react";
 import { createBottomTabNavigator } from "react-navigation";
-import MapScreen from "./components/map-screen.js";
+import MapScreen from "./components/maps/static-map.js";
 import CameraScreen from "./components/camera-screen.js";
 import AppBase from "./app-base.js";
 import AppSetting from "./screens/other/settings.js";
