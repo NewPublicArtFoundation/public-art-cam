@@ -43,7 +43,7 @@ export const bootstrap = () => {
   });
 
   RkTheme.setType('RkText', 'hero', {
-    fontSize: scale(33),
+    fontSize: 33,
   });
 
   RkTheme.setType('RkText', 'menuIcon', {
