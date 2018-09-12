@@ -1,14 +1,15 @@
+import React from "react";
 import { createBottomTabNavigator } from "react-navigation";
-import CameraScreen from "./camera-screen.js";
-import DetailsScreen from "./details-screen.js";
-import HomeNavStack from "./home-nav-stack.js";
-import SettingsScreen from "./settings-screen.js";
+import CameraScreen from "./components/camera-screen.js";
+import AppBase from "./app-base.js";
+import AppSetting from "./screens/other/settings.js";
 
 const RootStack = createBottomTabNavigator(
   {
-    Home: HomeNavStack,
+    Home: AppBase,
+    Map: CameraScreen,
     Camera: CameraScreen,
-    Settings: SettingsScreen,
+    Settings: AppSetting,
   },
   {
     initialRouteName: "Home",

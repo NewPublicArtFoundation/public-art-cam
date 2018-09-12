@@ -1,24 +1,12 @@
-import React from 'react';
-import {
-  ScrollView,
-  View,
-  TouchableOpacity,
-  StyleSheet,
-} from 'react-native';
-import {
-  RkText,
-  RkStyleSheet,
-  RkTheme,
-} from 'react-native-ui-kitten';
-import {
-  RkSwitch,
-  FindFriends,
-} from '../../components';
-import { FontAwesome } from '../../assets/icons';
+import React from "react";
+import { ScrollView, View, TouchableOpacity, StyleSheet } from "react-native";
+import { RkText, RkStyleSheet, RkTheme } from "react-native-ui-kitten";
+import { RkSwitch, FindFriends } from "../../components";
+import { FontAwesome } from "../../assets/icons";
 
 export class Settings extends React.Component {
   static navigationOptions = {
-    title: 'Settings'.toUpperCase(),
+    title: "Settings".toUpperCase(),
   };
 
   state = {
@@ -29,11 +17,11 @@ export class Settings extends React.Component {
     facebookEnabled: true,
   };
 
-  onPushNotificationsSettingChanged = (value) => {
+  onPushNotificationsSettingChanged = value => {
     this.setState({ sendPush: value });
   };
 
-  onRefreshAutomaticallySettingChanged = (value) => {
+  onRefreshAutomaticallySettingChanged = value => {
     this.setState({ shouldRefresh: value });
   };
 
@@ -53,20 +41,20 @@ export class Settings extends React.Component {
     <ScrollView style={styles.container}>
       <View style={styles.section}>
         <View style={[styles.row, styles.heading]}>
-          <RkText rkType='primary header6'>PROFILE SETTINGS</RkText>
+          <RkText rkType="primary header6">PROFILE SETTINGS</RkText>
         </View>
         <View style={styles.row}>
           <TouchableOpacity style={styles.rowButton}>
-            <RkText rkType='header6'>Edit Profile</RkText>
+            <RkText rkType="header6">Edit Profile</RkText>
           </TouchableOpacity>
         </View>
         <View style={styles.row}>
           <TouchableOpacity style={styles.rowButton}>
-            <RkText rkType='header6'>Change Password</RkText>
+            <RkText rkType="header6">Change Password</RkText>
           </TouchableOpacity>
         </View>
         <View style={styles.row}>
-          <RkText rkType='header6'>Send Push Notifications</RkText>
+          <RkText rkType="header6">Send Push Notifications</RkText>
           <RkSwitch
             style={styles.switch}
             value={this.state.sendPush}
@@ -75,7 +63,7 @@ export class Settings extends React.Component {
           />
         </View>
         <View style={styles.row}>
-          <RkText rkType='header6'>Refresh Automatically</RkText>
+          <RkText rkType="header6">Refresh Automatically</RkText>
           <RkSwitch
             style={styles.switch}
             value={this.state.shouldRefresh}
@@ -86,12 +74,12 @@ export class Settings extends React.Component {
       </View>
       <View style={styles.section}>
         <View style={[styles.row, styles.heading]}>
-          <RkText rkType='primary header6'>FIND FRIENDS</RkText>
+          <RkText rkType="primary header6">FIND FRIENDS</RkText>
         </View>
         <View style={styles.row}>
           <FindFriends
             color={RkTheme.current.colors.twitter}
-            text='Twitter'
+            text="Twitter"
             icon={FontAwesome.twitter}
             selected={this.state.twitterEnabled}
             onPress={this.onFindFriendsTwitterButtonPressed}
@@ -100,7 +88,7 @@ export class Settings extends React.Component {
         <View style={styles.row}>
           <FindFriends
             color={RkTheme.current.colors.google}
-            text='Google'
+            text="Google"
             icon={FontAwesome.google}
             selected={this.state.googleEnabled}
             onPress={this.onFindFriendsGoogleButtonPressed}
@@ -109,7 +97,7 @@ export class Settings extends React.Component {
         <View style={styles.row}>
           <FindFriends
             color={RkTheme.current.colors.facebook}
-            text='Facebook'
+            text="Facebook"
             icon={FontAwesome.facebook}
             selected={this.state.facebookEnabled}
             onPress={this.onFindFriendsFacebookButtonPressed}
@@ -118,31 +106,31 @@ export class Settings extends React.Component {
       </View>
       <View style={styles.section}>
         <View style={[styles.row, styles.heading]}>
-          <RkText rkType='primary header6'>SUPPORT</RkText>
+          <RkText rkType="primary header6">SUPPORT</RkText>
         </View>
         <View style={styles.row}>
           <TouchableOpacity style={styles.rowButton}>
-            <RkText rkType='header6'>Help</RkText>
+            <RkText rkType="header6">Help</RkText>
           </TouchableOpacity>
         </View>
         <View style={styles.row}>
           <TouchableOpacity style={styles.rowButton}>
-            <RkText rkType='header6'>Privacy Policy</RkText>
+            <RkText rkType="header6">Privacy Policy</RkText>
           </TouchableOpacity>
         </View>
         <View style={styles.row}>
           <TouchableOpacity style={styles.rowButton}>
-            <RkText rkType='header6'>Terms & Conditions</RkText>
+            <RkText rkType="header6">Terms & Conditions</RkText>
           </TouchableOpacity>
         </View>
         <View style={styles.row}>
           <TouchableOpacity style={styles.rowButton}>
-            <RkText rkType='header6'>Logout</RkText>
+            <RkText rkType="header6">Logout</RkText>
           </TouchableOpacity>
         </View>
       </View>
     </ScrollView>
-  )
+  );
 }
 
 const styles = RkStyleSheet.create(theme => ({
@@ -159,12 +147,12 @@ const styles = RkStyleSheet.create(theme => ({
     paddingBottom: 12.5,
   },
   row: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+    flexDirection: "row",
+    justifyContent: "space-between",
     paddingHorizontal: 17.5,
     borderBottomWidth: StyleSheet.hairlineWidth,
     borderColor: theme.colors.border.base,
-    alignItems: 'center',
+    alignItems: "center",
   },
   rowButton: {
     flex: 1,
@@ -174,3 +162,5 @@ const styles = RkStyleSheet.create(theme => ({
     marginVertical: 14,
   },
 }));
+
+export default Settings;

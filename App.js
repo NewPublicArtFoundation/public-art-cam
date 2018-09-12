@@ -1,53 +1,9 @@
 import React from "react";
-import { createDrawerNavigator, createStackNavigator } from "react-navigation";
-import { withRkTheme } from "react-native-ui-kitten";
-import { AppRoutes } from "./src/config/navigation/routesBuilder";
-import * as Screens from "./src/screens";
 import { bootstrap } from "./src/config/bootstrap";
-import track from "./src/config/analytics";
+import RootStack from "./src/root-stack";
 import { data } from "./src/data";
 import { AppLoading, Font } from "expo";
-import { View, SafeAreaView } from "react-native";
-
-bootstrap();
-data.populateData();
-
-function getCurrentRouteName(navigationState) {
-  if (!navigationState) {
-    return null;
-  }
-  const route = navigationState.routes[navigationState.index];
-  if (route.routes) {
-    return getCurrentRouteName(route);
-  }
-  return route.routeName;
-}
-
-let SideMenu = withRkTheme(Screens.SideMenu);
-const KittenApp = createStackNavigator(
-  {
-    First: {
-      screen: Screens.SplashScreen,
-    },
-    Home: {
-      screen: createDrawerNavigator(
-        {
-          ...AppRoutes,
-        },
-        {
-          drawerOpenRoute: "DrawerOpen",
-          drawerCloseRoute: "DrawerClose",
-          drawerToggleRoute: "DrawerToggle",
-          contentComponent: props => <SideMenu {...props} />,
-        },
-      ),
-    },
-  },
-  {
-    headerMode: "none",
-    cardStyle: { shadowColor: "transparent" },
-  },
-);
+import { SafeAreaView } from "react-native";
 
 export default class App extends React.Component {
   state = {
@@ -78,16 +34,7 @@ export default class App extends React.Component {
 
     return (
       <SafeAreaView style={{ flex: 1, backgroundColor: "#000" }}>
-        <KittenApp
-          onNavigationStateChange={(prevState, currentState) => {
-            const currentScreen = getCurrentRouteName(currentState);
-            const prevScreen = getCurrentRouteName(prevState);
-
-            if (prevScreen !== currentScreen) {
-              track(currentScreen);
-            }
-          }}
-        />
+        <RootStack />
       </SafeAreaView>
     );
   }
