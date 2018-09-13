@@ -4,11 +4,14 @@ import {
   Image,
   View,
   TouchableOpacity,
+  ListView,
 } from 'react-native';
 import {
   RkText,
   RkCard, RkStyleSheet,
 } from 'react-native-ui-kitten';
+import InfiniteScrollView from 'react-native-infinite-scroll-view';
+
 import { SocialBar } from '../../components';
 import { data } from '../../data';
 import NavigationType from '../../config/navigation/propTypes';
@@ -26,6 +29,13 @@ export class Articles1 extends React.Component {
   state = {
     data: data.getArticles(),
   };
+
+  _loadMoreContentAsync = async () => {
+    // Fetch more data here.
+    // After fetching data, you should update your ListView data source
+    // manually.
+    // This function does not have a return value.
+  }
 
   extractItemKey = (item) => `${item.id}`;
 
